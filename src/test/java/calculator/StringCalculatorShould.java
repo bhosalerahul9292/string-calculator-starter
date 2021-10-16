@@ -52,9 +52,14 @@ class StringCalculatorShould {
     
     @Test
     void string_with_negative_number_should_return_exception() {
-    	Assertions.assertThrows(Exception.class, () -> {
+    	Exception exception = Assertions.assertThrows(Exception.class, () -> {
     		StringCalculator stringCalculator = new StringCalculator();
-            stringCalculator.add("1,-2");
+            stringCalculator.add("1,-2,3,4,5,-6");
     	});
+    	
+    	String expectedMessage = "Negatives not allowed - [-2, -6]";
+    	String message = exception.getMessage();
+    	
+    	assertEquals(expectedMessage, message);
     }
 }

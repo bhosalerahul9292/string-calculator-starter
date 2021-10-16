@@ -22,13 +22,12 @@ class StringCalculator {
     	
     	List<Integer> negNumbers = checkForNegativeNumbers(numbers);
     	if (!negNumbers.isEmpty()) {
-    		throw new Exception("Negatives not allowed "+negNumbers.toString());
+    		throw new Exception("Negatives not allowed - "+negNumbers.toString());
     	}
     	
     	int sum=0;
 		for (String i:numbers) {
 			if (i.isBlank()) {
-				System.out.println("found blank"+mutableInput);
 				continue;
 			}
 			sum=sum+stringToInt(i);
