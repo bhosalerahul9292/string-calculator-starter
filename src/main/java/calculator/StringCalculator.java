@@ -10,6 +10,9 @@ class StringCalculator {
     	String[] numbers=input.split(",|\n");
     	int sum=0;
 		for (String i:numbers) {
+			if (i.isBlank()) {
+				continue;
+			}
 			sum=sum+stringToInt(i);
 		}
 		return sum;
