@@ -6,13 +6,9 @@ class StringCalculator {
     	if (input.isEmpty()) {
     		return 0;
     	}
-    	
-    	if(input.length()==1) {
-			return stringToInt(input);
-		}
-    	
+  	
     	String[] numbers=input.split(",|\n");
-    	
+    	System.out.println("here"+ input);
     	int sum=0;
 		for (String i:numbers) {
 			sum=sum+stringToInt(i);

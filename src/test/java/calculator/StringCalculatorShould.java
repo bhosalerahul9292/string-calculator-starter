@@ -16,6 +16,9 @@ class StringCalculatorShould {
     void string_with_single_number_should_return_number_as_int() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(1, stringCalculator.add("1"));
+        assertEquals(10, stringCalculator.add("10"));
+        assertEquals(100, stringCalculator.add("100"));
+        assertEquals(100, stringCalculator.add("100,"));
     }
     
     @Test
