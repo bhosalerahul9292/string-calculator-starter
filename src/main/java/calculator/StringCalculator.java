@@ -8,17 +8,20 @@ class StringCalculator {
     	}
     	
     	if(input.length()==1) {
-			return Integer.parseInt(input);
+			return stringToInt(input);
 		}
     	
     	String[] numbers=input.split(",");
     	
     	int sum=0;
 		for (String i:numbers) {
-			sum=sum+Integer.parseInt(i);
+			sum=sum+stringToInt(i);
 		}
 		return sum;
- 
     }
+    
+    private static int stringToInt(String input) {
+		return Integer.parseInt(input);
+	}
 
 }
