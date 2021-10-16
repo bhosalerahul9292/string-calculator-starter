@@ -44,6 +44,6 @@ class StringCalculatorShould {
     @Test
     void string_with_different_delimiter_should_return_sum() {
     	StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(6, stringCalculator.add("//;\n1;2"));
+        assertEquals(3, stringCalculator.add("//;\n1;2"));
     }
 }

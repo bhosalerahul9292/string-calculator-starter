@@ -1,6 +1,5 @@
 package calculator;
 
-import java.util.Arrays;
 
 class StringCalculator {
 
@@ -9,12 +8,21 @@ class StringCalculator {
     		return 0;
     	}
   	
-    	String[] numbers=input.split(",|\n");
-    	System.out.println("here"+ Arrays.toString(numbers));
+    	String delimiter = ",|\n";
+    	
+    	String mutableInput = input;
+    	
+    	if (input.startsWith("//")) {
+    		char ch = input.charAt(2);
+    		delimiter = delimiter + "|" + String.valueOf(ch);
+    		mutableInput = mutableInput.substring(4);
+    	}
+    	
+    	String[] numbers=mutableInput.split(delimiter);
+    	
     	int sum=0;
 		for (String i:numbers) {
 			if (i.isBlank()) {
-				System.out.println("found blank"+input);
 				continue;
 			}
 			sum=sum+stringToInt(i);
