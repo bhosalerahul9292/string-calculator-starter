@@ -31,6 +31,8 @@ class StringCalculatorShould {
     void string_with_more_than_two_numbers_should_return_sum() {
     	StringCalculator stringCalculator = new StringCalculator();
         assertEquals(21, stringCalculator.add("1,2,3,4,5,6"));
+        assertEquals(21, stringCalculator.add("1,2,3,4,5,6,"));
+        assertEquals(21, stringCalculator.add(",1,2,3,4,5,6,"));
     }
     
     @Test

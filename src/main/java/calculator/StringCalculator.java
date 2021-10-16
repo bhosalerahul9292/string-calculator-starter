@@ -8,7 +8,6 @@ class StringCalculator {
     	}
   	
     	String[] numbers=input.split(",|\n");
-    	System.out.println("here"+ input);
     	int sum=0;
 		for (String i:numbers) {
 			sum=sum+stringToInt(i);
