@@ -4,6 +4,7 @@ import java.util.*;
 class StringCalculator {
 
     public int add(String input)  throws Exception {
+    	
     	if (input.isEmpty()) {
     		return 0;
     	}
@@ -25,6 +26,10 @@ class StringCalculator {
     		throw new Exception("Negatives not allowed - "+negNumbers.toString());
     	}
     	
+		return calculateSum(numbers);
+    }
+    
+    private static int calculateSum(String[] numbers) {
     	int sum=0;
 		for (String i:numbers) {
 			if (i.isBlank()) {
