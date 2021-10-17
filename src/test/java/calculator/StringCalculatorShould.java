@@ -30,6 +30,12 @@ class StringCalculatorShould {
     }
     
     @Test
+    void string_with_two_numbers_including_whitespace_should_return_sum() throws Exception {
+    	StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(3, stringCalculator.add("1,    2"));
+    }
+    
+    @Test
     void string_with_more_than_two_numbers_should_return_sum() throws Exception {
     	StringCalculator stringCalculator = new StringCalculator();
         assertEquals(21, stringCalculator.add("1,2,3,4,5,6"));
