@@ -10,7 +10,7 @@ class StringCalculator {
   	
     	String delimiter = ",|\n";
     	
-    	String mutableInput = input;
+    	String mutableInput = removeWhiteSpaces(input);
     	
     	if (input.startsWith("//")) {
     		char ch = input.charAt(2);
@@ -33,6 +33,17 @@ class StringCalculator {
 			sum=sum+stringToInt(i);
 		}
 		return sum;
+    }
+    
+    private static String removeWhiteSpaces(String input) {
+    	char[] strArray = input.toCharArray();
+    	StringBuffer stringBuffer = new StringBuffer();
+    	for (int i = 0; i < strArray.length; i++) {
+			if (strArray[i] != ' ') {
+				stringBuffer.append(strArray[i]);
+			}	
+		}
+    	return stringBuffer.toString();
     }
     
     private static int stringToInt(String input) {
